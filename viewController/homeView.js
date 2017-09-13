@@ -43,6 +43,7 @@ class HomeView extends Component {
 		)}
 	_renderSectionHeader(ss){
 		console.log(ss);
+		
 		return <View><Text style={styles.headViewStyle}> 头{ss} ==</Text></View>;
 	}
 	
