@@ -40,7 +40,7 @@ export default class ListViewTest extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     alignItems: 'flex-start',
     backgroundColor: '#666666',
   },
