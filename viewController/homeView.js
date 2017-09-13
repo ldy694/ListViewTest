@@ -22,10 +22,11 @@ class HomeView extends Component {
 	}
   render() {
     return (
-    	<View style={styles.bigViewStyle}>
+    	// <View style={styles.bigViewStyle}>
     	<SectionList
        	renderItem={(aaa) => this.renderItemMethod(aaa)}
-		ItemSeparatorComponent={()=><View style={styles.lineStyle}></View>}
+				ItemSeparatorComponent={()=><View style={styles.lineStyle}></View>}
+				SectionSeparatorComponent={()=><View style={styles.lineStyle}></View>}
        	renderSectionHeader={(sections) => this._renderSectionHeader(sections.section.title)}
        	ListHeaderComponent={()=><Text>大大的头</Text>}
        	ListFooterComponent={()=><Text>小小尾</Text>}
@@ -38,12 +39,13 @@ class HomeView extends Component {
          {data: ['3','33','333','3','33','333','3','33','333','3','33','333','3','33','333','3','33','333','3','33','333','3','33','333',], title: 'ccccc'},
        	]}
      	/>
-     	</View>
+     	// </View>
 		)}
 	_renderSectionHeader(ss){
 		console.log(ss);
-		return <Text style={styles.headViewStyle}> 头{ss} ==</Text>;
+		return <View><Text style={styles.headViewStyle}> 头{ss} ==</Text></View>;
 	}
+	
     changeName(a){
     	if (this.props.blockMethod) {
     		this.props.blockMethod(a);
@@ -57,7 +59,7 @@ class HomeView extends Component {
 			  source={{uri: 'https://www.google.ca/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png'}}
 			/>
 
-			<Text style={styles.textStyle}>{aaa.item}+{this.props.abc1}</Text>
+			<Text style={styles.textStyle}>{aaa.item}+{aaa.index}</Text>
 			</TouchableOpacity>
 			</View>;
 	}
@@ -75,14 +77,14 @@ HomeView.propTypes = {
 const styles = StyleSheet.create({
 	listStyle:{
 		flexDirection: 'row',//设置横向布局
-    flexWrap: 'wrap',  //设置换行显示
+		flexWrap: 'wrap',  //设置换行显示
     alignItems: 'flex-start',
     backgroundColor: '#FFFFFF'
   },
 	cellStyle:{
-		flexDirection:'column',
-		justifyContent: 'flex-start',
-		alignItems: 'center',
+		// flexDirection:'column',
+		// justifyContent: 'flex-start',
+		// alignItems: 'center',
 		marginTop:10,
 		marginLeft:10,
 		marginRight:10,
@@ -116,7 +118,7 @@ const styles = StyleSheet.create({
 		marginLeft:3,
 		marginRight:3,
 		marginTop:3,
-		marginBottom:10,
+		// marginBottom:10,
 		backgroundColor:'#cccfff'
 	},
 	input:{
